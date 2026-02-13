@@ -349,3 +349,13 @@ body {
     margin-top: 30px;
     text-align: center;
 }
+
+
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
