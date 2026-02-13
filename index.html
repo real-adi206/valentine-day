@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine? 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mx-auto py-8 px-4 flex items-center justify-center min-h-screen">
+        <div class="card-container">
+            <!-- VIEW 1: The Proposal -->
+            <div class="view active" id="view1">
+                <div class="text-center">
+                    <img src="https://placehold.co/200x200/FFE8F0/8B1538?text=🐻" alt="Bear" class="sticker mx-auto">
+                    <h1 class="heading">Will you be mine 🥺?</h1>
+                    <div class="button-group">
+                        <button class="btn-red" onclick="goToView2()">YES</button>
+                        <button class="btn-blue" onclick="handleNo()">NO</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 2: The Celebration -->
+            <div class="view" id="view2">
+                <div class="text-center">
+                    <img src="https://placehold.co/200x200/FFE8F0/8B1538?text=💑" alt="Bear Couple" class="sticker mx-auto">
+                    <h1 class="heading">Happy Valentine Day Baby! 💍</h1>
+                    <p class="subtext">Every second with you is a celebration. You are the spark that makes my world so much brighter!</p>
+                    <button class="btn-red" onclick="goToView3()" style="margin-top: 30px;">SEE MY GIFTS →</button>
+                </div>
+            </div>
+
+            <!-- VIEW 3: The Gifts -->
+            <div class="view" id="view3">
+                <h1 class="heading text-center">Something for You</h1>
+                <div class="flex flex-col md:flex-row gap-6 justify-center my-8">
+                    <div class="gift-card" onclick="openLetterModal()">
+                        <div class="gift-card-icon">💌</div>
+                        <div class="gift-card-label">Love Letter</div>
+                    </div>
+                    <div class="gift-card" onclick="toggleGallery()">
+                        <div class="gift-card-icon">📸</div>
+                        <div class="gift-card-label">Photo Gallery</div>
+                    </div>
+                </div>
+
+                <!-- Gallery Section (Hidden by default) -->
+                <div id="gallery-section" class="hidden">
+                    <h2 style="font-family: 'Playfair Display', serif; color: #8B1538; text-align: center; margin: 20px 0; font-size: 1.5rem;">Our Memories</h2>
+                    <div class="gallery-container">
+                        <div class="polaroid">
+                            <img src="https://i.imgur.com/70Ytyyc.jpeg" >
+                            
+                        </div>
+                        <div class="polaroid">
+                            <img src="https://i.imgur.com/ZWkXdbb.jpeg" >
+
+                        </div>
+                        <div class="polaroid">
+                            <img src="https://i.imgur.com/NZnI69f.jpeg" alt="Perfect Day">
+                          
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-red" onclick="goToView4()" style="display: block; margin: 30px auto 0;">FINALLY... →</button>
+            </div>
+
+            <!-- VIEW 4: The Finale -->
+            <div class="view" id="view4">
+                <div class="text-center">
+                    <h1 class="heading">You are my forever 🧿❤️!</h1>
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/1smMDHO5jT986KGhPorpaFHpfxzxmhU-q/preview" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <p class="finale-text">
+                        I love you more than words can say.<br>
+                        No matter where life takes us, my heart will always choose you.<br>
+                        Thank you for being my peace, my smile, my love.<br>
+                        This Valentine's Day and every day after, I'm grateful to call you mine.<br>
+                        You are my forever, and I mean that with all my heart.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Letter Modal -->
+    <div id="letterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLetterModal()">&times;</span>
+            <h2 class="modal-heading">💌 My Love Letter</h2>
+            <p class="modal-text">
+                My bubudi,<br><br>
+               Happy Valentine day baby 😚💋💋 i love you so much meli nanhisi bacchu mela nanhasa baccha 😚💋💋thank you so much for staying in my my life and making it better baby 🥺 and thank you so much bubu doing everything for me I appreciate everything my bubu does😭💋💋 
+              meli bubu bohot acchi hai mela bohot sath deti hai bohot madat krti hai meli and bohot pyaar deti ho bohot kuch krta hai mela baccha 💋💋😭bubu you are so precious to me 😚💋💋 and bubu i love that you are so hardworking and so much better person now , my bubh is the best girl in whole world
+              and cutest in the whole world 😚💋💋💋im so proud of my bubudi i love my bubu more than anything 😚😚💋💋💋chahe kitni v mushkil ayegi mele bacche ke sath me hamesha rahunga and khush rakhunga and aapko sath dunga 😚💋💋cuz we are hubby and wifey forever 😚💋💋 so happy Valentine's day bubu again 😚💋💋
+              i love you so much my love my little princess my jaanudi mela bachcha my everything 😚💋💋❤❤😍😍<br>
+                Your adu 💕
+            </p>
+        </div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <span style="color: #8B1538; font-weight: 600; font-size: 0.9rem;">🎵 Music</span>
+        <button class="music-btn" onclick="toggleMusic()">▶</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v?si=%E2%80%A6" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
